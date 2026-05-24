@@ -1,0 +1,45 @@
+{
+  "instagram": {
+    "user_id": "17841400000000000",
+    "username": "your_instagram_username",
+    "account_type": "BUSINESS",
+    "app_id": "123456789012345",
+    "app_secret": "your_app_secret_32chars_hex_here",
+    "access_token": "IGAAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "token_type": "bearer",
+    "expires_at": 1234567890,
+    "data_access_expires_at": 1234567890,
+    "api_version": "v24.0",
+    "host": "graph.instagram.com",
+    "permissions": [
+      "instagram_business_basic",
+      "instagram_business_content_publish",
+      "instagram_business_manage_messages",
+      "instagram_business_manage_insights",
+      "instagram_business_manage_comments"
+    ]
+  },
+  "threads": {
+    "user_id": "12345678901234567",
+    "username": "your_threads_username",
+    "app_id": "123456789012345",
+    "app_secret": "your_app_secret_32chars_hex_here",
+    "access_token": "THAAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "token_type": "bearer",
+    "expires_at": 1234567890,
+    "data_access_expires_at": 1234567890,
+    "api_version": "v1.0",
+    "host": "graph.threads.net",
+    "permissions": [
+      "threads_basic",
+      "threads_content_publish",
+      "threads_manage_replies",
+      "threads_manage_insights",
+      "threads_read_replies"
+    ]
+  },
+  "token_refresh": {
+    "auto_refresh": true,
+    "refresh_before_expiry_minutes": 5
+  }
+}

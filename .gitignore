@@ -1,0 +1,32 @@
+# 憑證和配置（絕不提交！）
+config.json
+.env
+.env.local
+.secrets/
+
+# 含真實帳號資訊的追蹤檔（絕不提交！）
+TOKEN_EXPIRY.md
+
+# 個人文件（不要分享）
+style_profile.md
+content_plan.md
+
+# 發文紀錄（含連結、post ID）
+post_history.json
+
+# 系統文件
+.DS_Store
+*.swp
+*.swo
+*~
+.vscode/
+
+# Python 快取
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 日誌
+*.log
+logs/

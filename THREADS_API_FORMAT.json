@@ -1,0 +1,95 @@
+{
+  "api_endpoint": {
+    "method": "POST",
+    "url": "https://graph.threads.net/v1.0/{threads_user_id}/threads",
+    "description": "Threads API for creating posts"
+  },
+
+  "example_request": {
+    "method": "POST",
+    "url": "https://graph.threads.net/v1.0/27062622620054262/threads",
+    "query_parameters": {
+      "media_type": "TEXT",
+      "text": "欠債 180 萬的時候，我想過最壞的打算。後來才知道，我連最基本的選項都不知道。三十歲那年，我的利率是 18%。",
+      "access_token": "THAAOFOcPsFA1BYlpOWXZAOSmo3OXhrTEFhSmhrcEcyTDVUS0w4LXVSdnZAGaENZAdWgzSllVdm0xUXEtNm1HQVY1c1MzR2U3M0NLMVMyM3FkUFdBc1Fhc2F0ZAGtObnBPVm5wR0h0eWJ5WDgwd1FabjZAZAOTV1Uy0zUGNkQTNQT2hKcnE2NG94WXl6TkVvUVhqMlEZD"
+    },
+    "body": null,
+    "note": "Parameters are sent as Query Parameters in URL, NOT in request body"
+  },
+
+  "example_response": {
+    "status_code": 200,
+    "body": {
+      "id": "17888879010487688"
+    }
+  },
+
+  "parameter_details": {
+    "required": {
+      "media_type": {
+        "type": "string",
+        "values": ["TEXT", "IMAGE"],
+        "description": "Type of post content"
+      },
+      "text": {
+        "type": "string",
+        "max_length": 500,
+        "description": "Post content text"
+      },
+      "access_token": {
+        "type": "string",
+        "description": "Threads API access token"
+      }
+    },
+    "optional": {
+      "image_url": {
+        "type": "string",
+        "required_when": "media_type=IMAGE",
+        "description": "Full URL of the image"
+      },
+      "reply_to": {
+        "type": "string",
+        "description": "Parent post ID for thread/reply"
+      }
+    }
+  },
+
+  "python_example": {
+    "code": "import requests\n\nurl = 'https://graph.threads.net/v1.0/27062622620054262/threads'\n\nparams = {\n    'media_type': 'TEXT',\n    'text': 'Your post content here',\n    'access_token': 'YOUR_TOKEN'\n}\n\nresponse = requests.post(url, params=params)\nprint(response.json())  # {'id': '17888879010487688'}"
+  },
+
+  "curl_example": {
+    "command": "curl -X POST 'https://graph.threads.net/v1.0/27062622620054262/threads' \\\n  -d 'media_type=TEXT' \\\n  -d 'text=Your post content' \\\n  -d 'access_token=YOUR_TOKEN'"
+  },
+
+  "image_post_example": {
+    "method": "POST",
+    "url": "https://graph.threads.net/v1.0/27062622620054262/threads",
+    "query_parameters": {
+      "media_type": "IMAGE",
+      "text": "Post caption here",
+      "image_url": "https://example.com/image.jpg",
+      "access_token": "YOUR_TOKEN"
+    }
+  },
+
+  "thread_reply_example": {
+    "method": "POST",
+    "url": "https://graph.threads.net/v1.0/27062622620054262/threads",
+    "query_parameters": {
+      "media_type": "TEXT",
+      "text": "Reply content here",
+      "reply_to": "17888879010487688",
+      "access_token": "YOUR_TOKEN"
+    }
+  },
+
+  "important_notes": {
+    "note_1": "Use graph.threads.net, NOT graph.instagram.com",
+    "note_2": "Use v1.0, NOT v18.0",
+    "note_3": "Parameters go in Query String, NOT request body",
+    "note_4": "Media type must be exactly 'TEXT' or 'IMAGE'",
+    "note_5": "Text limit is 500 characters for single post",
+    "note_6": "For longer content, use thread/reply feature"
+  }
+}
