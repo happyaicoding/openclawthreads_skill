@@ -152,7 +152,7 @@ def upload_instagram_image(config, image_path, caption):
     """
     上傳圖片到 Instagram，返回 media_id
     """
-    url = f"https://graph.instagram.com/v18.0/{config['instagram']['user_id']}/media"
+    url = f"https://graph.instagram.com/v24.0/{config['instagram']['user_id']}/media"
     
     # 讀取圖片（支援 JPG, PNG, GIF）
     with open(image_path, 'rb') as f:
@@ -179,7 +179,7 @@ def publish_instagram_post(config, media_id):
     """
     發佈 Media Container 到 Feed
     """
-    url = f"https://graph.instagram.com/v18.0/{config['instagram']['user_id']}/media_publish"
+    url = f"https://graph.instagram.com/v24.0/{config['instagram']['user_id']}/media_publish"
     
     data = {
         'creation_id': media_id,
@@ -205,7 +205,7 @@ def get_shortcode(config, post_id):
     """
     從 post_id 查詢 shortcode（Instagram 短代碼）
     """
-    url = f"https://graph.instagram.com/v18.0/{post_id}"
+    url = f"https://graph.instagram.com/v24.0/{post_id}"
     
     params = {
         'fields': 'shortcode',
@@ -230,7 +230,7 @@ def publish_threads_post(config, text):
     """
     發佈單則 Threads 貼文
     """
-    url = f"https://graph.threads.com/v18.0/{config['threads']['user_id']}/threads"
+    url = f"https://graph.threads.net/v1.0/{config['threads']['user_id']}/threads"
     
     data = {
         'text': text,
@@ -265,7 +265,7 @@ def publish_threads_thread(config, text_list):
     urls = []
     
     for i, text in enumerate(text_list):
-        url = f"https://graph.threads.com/v18.0/{config['threads']['user_id']}/threads"
+        url = f"https://graph.threads.net/v1.0/{config['threads']['user_id']}/threads"
         
         data = {
             'text': text,

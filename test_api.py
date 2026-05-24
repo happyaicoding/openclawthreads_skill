@@ -91,7 +91,7 @@ def test_threads_api(config, timeout=10):
         print(f"🔑 Access Token: {access_token[:30]}...")
         print(f"⏳ 准备发起 API 请求...")
 
-    url = f"https://graph.threads.com/v18.0/{user_id}"
+    url = f"https://graph.threads.net/v1.0/{user_id}"
     params = {
         "fields": "id,username,name",
         "access_token": access_token
@@ -176,7 +176,7 @@ def test_instagram_api(config, timeout=10):
     print(f"🔑 Access Token: {access_token[:20]}...")
     print(f"⏳ 准备发起 API 请求...")
 
-    url = f"https://graph.instagram.com/v18.0/{user_id}"
+    url = f"https://graph.instagram.com/v24.0/{user_id}"
     params = {
         "fields": "id,username,name",
         "access_token": access_token

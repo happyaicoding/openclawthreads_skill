@@ -239,7 +239,7 @@ Threads: [口語版本]
 
 4. **交換短期 Token**
    ```bash
-   curl -X POST https://graph.instagram.com/v18.0/oauth/access_token \
+   curl -X POST https://graph.instagram.com/v24.0/oauth/access_token \
      -d "client_id=YOUR_APP_ID" \
      -d "client_secret=YOUR_APP_SECRET" \
      -d "grant_type=authorization_code" \
